@@ -1,0 +1,11 @@
+<h1>Hello {{firstname}}, It's Homepage</h1>
+<h3>{{message}}</h3>
+<h4><a href="/question/">What do you want to ask? Click Here</a></h4>
+<h4>Questions?</h4>
+<body>
+    {% for q in questionlist %}
+    <b style="color: blue;">{{q.user.firstName}}:</b><br>&emsp;<a href="/answer/{{q.id}}">{{q.question}}</a> <br>
+    {% endfor %}
+    &ensp;<h4><a href="/logout/"> <button> Logout from GetToKnow</button></a></h4>
+    
+</body>

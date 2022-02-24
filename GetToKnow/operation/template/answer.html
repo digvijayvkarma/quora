@@ -1,0 +1,11 @@
+<form action="/answer/{{question.id}}" method="post">
+    {% csrf_token %}
+    <h3>Question: {{ question.question}}</h3>
+    {{ form }} <br>
+    <input type="submit" value="Submit"><br>
+    {{ message }}
+    {% for a in answer%}
+    <b style="color: blue;">{{a.user.firstName}}:</b><br>&emsp;{{a.answer}}&ensp;<b>No. of Likes:{{a.nlikes}}<b></b>&ensp;<b>liked:{{a.already_liked}}<b><h4><a href="/like/{{a.id}}/{{question.id}}">Like/Unlike</a></h4><br>
+    {% endfor %}
+    <h4><a href="/home/">Go To Homepage</a></h4>
+</form>

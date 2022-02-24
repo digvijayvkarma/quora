@@ -1,0 +1,7 @@
+<form action="/question/" method="post">
+    {% csrf_token %}
+    {{ form }} <br>
+    <input type="submit" value="Submit"><br>
+    {{ message }}
+    <h4><a href="/home/">Go To Homepage</a></h4>
+</form>
